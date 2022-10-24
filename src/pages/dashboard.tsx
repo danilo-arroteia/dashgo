@@ -25,7 +25,7 @@ const options: ApexOptions = {
     enabled: false,
   },
   tooltip: {
-    followCursor: true,
+    followCursor: false,
   },
   xaxis: {
     type: "datetime",
@@ -66,15 +66,15 @@ export default function Dashoard() {
       <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
         <Sidebar />
 
-        <SimpleGrid flex="1" gap="4" minChildWidth="328px">
-          <Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4">
+        <SimpleGrid flex="1" gap="4" minChildWidth="328px" minW="328px">
+          <Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4" overflow="clip">
             <Text fontSize="lg" mb="4">
               Weekly subscribers
             </Text>
             <Chart options={options} series={series} type="area" height={160} />
           </Box>
 
-          <Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4">
+          <Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4" overflow="clip">
             <Text fontSize="lg" mb="4">
               Registration fee
             </Text>
